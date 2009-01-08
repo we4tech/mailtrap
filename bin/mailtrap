@@ -5,13 +5,20 @@
 
 require 'rubygems'
 require 'daemons'
-require 'mailtrap'
+mailtrap_file = File.join(File.dirname(__FILE__), '../lib/mailtrap.rb')
+if File.exists?(mailtrap_file)
+  require mailtrap_file
+else
+  require 'mailtrap'
+end
 
-opts = Trollop::options do
+p_options = Trollop::options do
   opt :host, "The host SMTP clients will connect to", :default => 'localhost'
   opt :port, "The port SMTP clients will connect to", :default => 2525
   opt :once, "Whether to terminate after serving the first client", :default => false
   opt :file, "File where messages get written", :default => "/var/tmp/mailtrap.log"
+  opt :http_host, "The host http server will connect to", :default => "0.0.0.0"
+  opt :http_port, "The port http server will connect to", :default => 1992
 end
 
 options = {
@@ -24,5 +31,5 @@ options = {
 }
 
 Daemons.run_proc( 'mailtrap', options ) do
-  Mailtrap.new( opts[:host], opts[:port], opts[:once], opts[:file] )
+  Mailtrap::Base::new( p_options )
 end
