@@ -13,7 +13,7 @@ require File.join(File.dirname(__FILE__), 'mailbox_service.rb')
 #
 module Mailtrap
   class Base
-    VERSION = '0.2.1'
+    VERSION = '0.2.2'
 
     # Create a new Mailtrap on the specified host:port. If once it true it
     # will listen for one message then exit. Specify the msgdir where messages
