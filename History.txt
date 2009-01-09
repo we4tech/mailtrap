@@ -1,5 +1,9 @@
+== 2009-01-09
+* 1 major enhancement
+  * added web support to display recently received mails
+
 == 1.0.0 / 2007-10-03
 
 * 1 major enhancement
   * Birthday!
-
+ 

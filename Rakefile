@@ -15,6 +15,7 @@ Hoe.new('mailtrap', Mailtrap::Base::VERSION ) do |p|
   p.remote_rdoc_dir = 'mailtrap'
   p.extra_deps << ['daemons','>= 1.0.8'] 
   p.extra_deps << ['trollop','>= 1.7']
+  p.extra_deps << ['rack','>= 0.3.0']
 end
 
 # vim: syntax=Ruby

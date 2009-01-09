@@ -42,6 +42,8 @@ For more info:
 * Rubygems rubygem
 * Daemons rubygem
 * Trollop rubygem
+* Rack rubygem
+* Erb
 
 All these are automatically installed if you use gem install -y
 
